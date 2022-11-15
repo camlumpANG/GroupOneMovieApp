@@ -1,1 +1,7 @@
-<p>discover-movie works!</p>
+<div>
+    <div *ngFor="let m of movieList.results">
+        <p>{{m.title}}</p>
+        <img src ={{m.poster_path}}/>
+
+    </div>
+</div>
