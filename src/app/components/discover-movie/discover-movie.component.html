@@ -1,7 +1,11 @@
 <div>
     <div *ngFor="let m of movieList.results">
+        <a routerLink="/movies/{{m.id}}">
+            <p>{{m.title}}</p>
+            <img class="poster" src ="https://image.tmdb.org/t/p/original/{{m.poster_path}}" />
+        </a>
         <p>{{m.title}}</p>
-        <img class="poster" src ="https://image.tmdb.org/t/p/original/{{m.poster_path}}" />
+       
 
     </div>
 </div>
