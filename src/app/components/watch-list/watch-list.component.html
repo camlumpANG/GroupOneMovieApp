@@ -1,5 +1,11 @@
-<div *ngFor="let m of watchedListMovies">
-    <h1><a routerLink="/movies/{{m.id}}">{{m.title}}</a></h1>
-    <button (click)="removeMovie(m._id)">Remove movie from list.</button>
-
+<h3 *ngIf="watchedListMovies.length > 0">Here are few items you have added to watch list</h3>
+<h3 *ngIf="watchedListMovies.length === 0">There are no Items in the watch list</h3>
+<div class="container" >
+    <div  class="card" *ngFor="let m of watchedListMovies">
+        <h3><a routerLink="/movies/{{m.id}}">{{m.title}}</a></h3>
+        <img class="poster" src ="https://image.tmdb.org/t/p/original/{{m.backdrop_path}}" />
+        <button class = "removebtn" (click)="removeMovie(m._id)">Remove from wish list.</button>
+    
+    </div>
+    
 </div>

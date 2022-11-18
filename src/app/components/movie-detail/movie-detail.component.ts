@@ -36,7 +36,7 @@ export class MovieDetailComponent implements OnInit {
       id:this.movieDetail.id,
       title:this.movieDetail.title,
       overview:this.movieDetail.overview,
-      backdrop_path:this.movieDetail.backdrop_path
+      backdrop_path:this.movieDetail.poster_path
 
     }
      

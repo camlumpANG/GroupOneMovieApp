@@ -1,0 +1,17 @@
+.poster {
+    height: 200px;
+    width: 150px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 32px;
+    width: 250px;
+}
+.removebtn{
+    background-color: brown;
+    color: white;
+    border-radius: 5px;
+}
