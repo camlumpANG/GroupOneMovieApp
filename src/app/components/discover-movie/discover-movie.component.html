@@ -1,17 +1,20 @@
 <div>
     <div>
         <select (change)="onChange($event)">
-            <option value=""></option>
+            <option value="">FilterBy</option>
             <option value="review">Review</option>
         </select>
     </div>
-    <div *ngFor="let m of movieList.results">
+    <div class="container">
+    <div class="card" *ngFor="let m of movieList.results">
         <a routerLink="/movies/{{m.id}}">
-            <p>{{m.title}}</p>
+            <h3><p>{{m.title}}</p></h3>
             <img class="poster" src ="https://image.tmdb.org/t/p/original/{{m.poster_path}}" />
         </a>
         <p>{{m.title}}</p>
+        <p>Rating: <span class="rating">{{m.vote_average}}</span></p>
+        <p>{{m.overview}}</p>
        
-
+    </div>
     </div>
 </div>
