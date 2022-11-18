@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { watchMovKey } from '../secret';
 import { Watched } from '../models/watched';
+import { DbParams } from '../models/db-params';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,28 @@ import { Watched } from '../models/watched';
 export class DbService {
 
   constructor(private http:HttpClient) { }
-  url:string ="https://watchlist-4f2d.restdb.io/rest/wlisttable";
+  url:string ="https://watchlist-4f2d.restdb.io/rest/wlisttable2";
 
-  getWatchedList():Observable<Watched> {
-    return this.http.get<Watched>(this.url, {headers:{"x-apikey": watchMovKey}});
+  getWatchedList():Observable<DbParams[]> {
+
+    return this.http.get<DbParams[]>(this.url, {headers:{"x-apikey": watchMovKey}});
 
   }
-
-  addWatchedMovie(movie:Watched):Observable<Watched> {
+  // const httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type':  'application/json',
+  //     Authorization: 'my-auth-token'
+  //   })
+  // };
+  addWatchedMovie(movie:any):Observable<Watched> {
+    console.log(movie);
+    
     return this.http.post<Watched>(this.url, movie, {headers:{"x-apikey": watchMovKey}})
+    
+  }
+
+  deletWatchedMovie(movie_id:string):Observable<any> {
+    return this.http.delete<any>(`${this.url}/${movie_id}`, {headers:{"x-apikey": watchMovKey}})
   }
 
 }

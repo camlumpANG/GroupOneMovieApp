@@ -1,4 +1,10 @@
 <div>
+    <div>
+        <select (change)="onChange($event)">
+            <option value=""></option>
+            <option value="review">Review</option>
+        </select>
+    </div>
     <div *ngFor="let m of movieList.results">
         <a routerLink="/movies/{{m.id}}">
             <p>{{m.title}}</p>

@@ -10,6 +10,7 @@ import { DiscoverMovieService } from 'src/app/service/discover-movie.service';
 export class DiscoverMovieComponent implements OnInit {
  
   movieList:Movies = {} as Movies;
+
   constructor(private discoverMovieService:DiscoverMovieService) { }
 
   ngOnInit(): void {
@@ -19,4 +20,17 @@ export class DiscoverMovieComponent implements OnInit {
     })
    
   }
+
+   movieByReview():any{
+    const res = this.movieList.results.sort((a, b) => a.vote_average > b.vote_average? -1 : 1);
+     this.movieList.results = res;
+     
+  }
+  onChange(e:any):void {
+    console.log(e.target.value);
+    this.movieByReview();
+    
+
+  }
+
 }

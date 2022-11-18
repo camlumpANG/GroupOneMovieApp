@@ -1,1 +1,6 @@
 <p>watch-list works!</p>
+<div *ngFor="let m of watchedListMovies">
+    <h1><a routerLink="/movies/{{m.id}}">{{m.title}}</a></h1>
+    <button (click)="removeMovie(m._id)">Remove movie from list.</button>
+
+</div>
