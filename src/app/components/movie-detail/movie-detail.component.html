@@ -1,11 +1,18 @@
 <div>
-    <button (click)="addMovieToWatchList()"> add to alreay watched</button>
     <h2>{{movieDetail.title}}</h2>
     <h3>Popularity: {{movieDetail.popularity}}</h3>
     <h3>Release Date: {{movieDetail.release_date}}</h3>
+    <div class="contentwrapper">
+
     <img class="poster" src ="https://image.tmdb.org/t/p/original/{{movieDetail.poster_path}}" />
-    <p>Overview: {{movieDetail.overview}}</p>
-    <p>Runtime: {{movieDetail.runtime}} minutes</p>
+    <div >
+        <p>Overview: {{movieDetail.overview}}</p>
+        <p>Runtime: {{movieDetail.runtime}} minutes</p>
+        <button (click)="addMovieToWatchList()"> add to Watch list</button>
+
+    </div>
+    </div>
+
 </div>
 
 
